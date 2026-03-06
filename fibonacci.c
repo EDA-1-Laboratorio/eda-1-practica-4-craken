@@ -18,7 +18,7 @@ long long fibonacci_ia(int n, MemoriaIA *m) {
     if (n <= 1) return (long long)n;
 
     // Si ya está en el Heap, lo devolvemos
-    if (m->tabla[n] != -1) return m->tabla[n];
+    if (m->tabla[n] != 1) return m->tabla[n];
 
     // Calculamos y guardamos
     m->tabla[n] = fibonacci_ia(n - 1, m) + fibonacci_ia(n - 2, m);
@@ -39,7 +39,7 @@ int main() {
 
     mem.capacidad = n + 1;
     mem.tabla = (long long *)malloc(mem.capacidad * sizeof(long long));
-    for (int i = 0; i < mem.capacidad; i++) mem.tabla[i] = -1;
+    for (int i = 0; i < mem.capacidad; i++) mem.tabla[i] = 1;
 
     imprimir_poco_a_poco("[SISTEMA]: Accediendo al núcleo de memoria dinámica...\n");
     imprimir_poco_a_poco("[SISTEMA]: Calculando secuencia de Fibonacci (N=42)...\n\n");
